@@ -126,6 +126,11 @@ class MainHandler(BaseHandler):
         )
 
 
+class AutomataHandler(BaseHandler):
+    def get(self):
+        self.render("autocell.html")
+
+
 class LoginHandler(BaseHandler):
     def get(self):
         self.render("login.html")
@@ -224,6 +229,7 @@ async def main():
             (r"/create", CreateHandler),
             (r"/a/message/new", MessageNewHandler),
             (r"/a/message/updates", MessageUpdatesHandler),
+            (r"/autocell", AutomataHandler)
         ],
         cookie_secret="__TODO:_GENERATE_YOUR_OWN_RANDOM_VALUE_HERE__",
         template_path=os.path.join(os.path.dirname(__file__), "templates"),
