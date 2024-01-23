@@ -47,7 +47,7 @@ def read_users(src):
     return users
 
 def write_user(dest, uname, pwd):
-    """Write the dict users to the file at dest."""
+    """Write the username/password to the file at dest."""
     with open(os.path.abspath(dest), 'a', encoding="utf-8") as f:
         f.write(uname + ',' + pwd + '\n')
 
